@@ -1,0 +1,18 @@
+```markdown
+# Deodap-like Ecommerce Starter
+
+This is a starter Next.js + Tailwind project scaffold to build an ecommerce website similar to deodap.com. It includes:
+
+- Product listing page
+- Product detail pages
+- Simple in-memory API for seed products
+- Responsive layout using Tailwind CSS
+
+Getting started:
+
+1. Install dependencies: npm install
+2. Run development server: npm run dev
+3. Open http://localhost:3000
+
+Next steps: add MongoDB persistence, authentication, Stripe checkout, and admin product management.
+```
