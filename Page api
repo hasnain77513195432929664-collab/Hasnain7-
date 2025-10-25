@@ -1,0 +1,8 @@
+export default function handler(req,res){
+  const products = [
+    { id:1, title:'Deodorant - Fresh', description:'Long lasting deodorant', price:199, image:'https://via.placeholder.com/600x400?text=Deodorant+1' },
+    { id:2, title:'Perfume - Floral', description:'Rich floral perfume', price:699, image:'https://via.placeholder.com/600x400?text=Perfume' },
+    { id:3, title:'Body Spray - Cool', description:'Refreshing body spray', price:249, image:'https://via.placeholder.com/600x400?text=Body+Spray' }
+  ]
+  res.status(200).json(products)
+}
