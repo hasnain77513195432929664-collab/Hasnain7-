@@ -1,0 +1,6 @@
+import Header from '../../components/Header'
+export default function ProductPage({product}){ if(!product) return <div><Header /><main className="container mx-auto p-8">Product not found</main></div> return ( <div> <Header /> <main className="container mx-auto p-8"> <div className="grid md:grid-cols-2 gap-8"> <img src={product.image} alt={product.title} className="w-full h-96 object-cover rounded"/> <div> <h1 className="text-2xl font-bold">{product.title}</h1> <p className="mt-4 text-gray-700">{product.description}</p> <p className="mt-4 text-xl font-semibold">Price: {product.price} ₹</p> </div> </div> </main> </div> ) }
+
+export async function getStaticPaths(){ const res = await fetch('http://localhost:3000/api/products') const products = await res.json() const paths = products.map(p=>({ params: { id: p.id.toString() } })) return { paths, fallback: true } }
+
+export async function getStaticProps({params}){ const res = await fetch('http://localhost:3000/api/products') const products = await res.json() const product = products.find(p=>p.id.toString()===params.id) return { props: { product: product || null } } }
